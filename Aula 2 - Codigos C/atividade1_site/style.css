@@ -1,0 +1,33 @@
+body {
+    background-color: #020B02;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+.explicacao {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    color: yellow;
+    font-size: 10px;
+    line-height: 10px;
+    text-shadow: 0 0 4px #ffff00, 0 0 12px rgba(255, 255, 0, 0.6);
+}
+
+.codigo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    color: #48D038;
+    font-size: 10px;
+    line-height: 10px;
+    text-shadow: 0 0 4px #00ff66, 0 0 12px rgba(0, 255, 102, 0.6);
+}

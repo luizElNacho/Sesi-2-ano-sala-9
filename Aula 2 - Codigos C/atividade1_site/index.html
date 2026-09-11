@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+    <title>Atividade 2</title>
+</head>
+<body>
+    <h1>Atividade 1 – Olá, Mundo!</h1>
+    <p>O que a atividade faz: Exibe duas mensagens fixas no terminal: "Olá, Mundo!" e "Bem-vindo à programação em C.".</p>
+    <pre class="codigo"><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Olá, Mundo!\n");
+    printf("Bem-vindo à programação em C.\n");
+    return 0;
+}</code></pre>
+
+<pre class="explicacao"><code>
+Explicação do código e funções
+#include &lt;stdio.h&gt;: Inclusão da biblioteca padrão de entrada e saída (Standard Input/Output), necessária para usar funções como printf.
+
+int main(): Função principal onde a execução de qualquer programa em C começa.
+
+printf(): Função que imprime dados/textos na tela.
+
+\n: Caractere especial de escape que pula para a próxima linha no terminal.
+
+return 0;: Indica que o programa terminou com sucesso.</code></pre>
+
+<h1>Atividade 2 – Apresentação</h1>
+<p>O que a atividade faz: Interage com o usuário lendo seu nome (texto) e idade (número inteiro) e exibe uma mensagem personalizada com esses dados.</p>
+
+<pre class="codigo"><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    char nome[50];
+    int idade;
+
+    printf("Digite o seu nome: ");
+    scanf("%s", nome);
+
+    printf("Digite a sua idade: ");
+    scanf("%d", &idade);
+
+    printf("Olá, %s! Você tem %d anos.\n", nome, idade);
+    return 0;
+}</code></pre>
+
+<pre class="explicacao"><code>
+Explicação do código e funções
+char nome[50];: Declara um vetor de caracteres (string) capaz de armazenar até 49 letras mais o caractere de terminação \0.
+
+int idade;: Declara uma variável do tipo inteiro para armazenar a idade.
+
+scanf(): Função responsável por ler dados digitados no teclado.
+
+%s e %d: Especificadores de formato para ler/imprimir uma string (%s) e um inteiro (%d).
+
+&idade: O operador & extrai o endereço de memória da variável idade, informando ao scanf onde salvar o valor digitado. (Variáveis do tipo array/string como nome não precisam de &).</code></pre>
+
+<h1>Atividade 3 – Soma</h1>
+<p>O que a atividade faz: Solicita dois números inteiros ao usuário, calcula a soma entre eles e exibe o resultado final.</p>
+
+<pre class="codigo"><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num1, num2, soma;
+
+    printf("Digite o primeiro número: ");
+    scanf("%d", &num1);
+
+    printf("Digite o segundo número: ");
+    scanf("%d", &num2);
+
+    soma = num1 + num2;
+
+    printf("A soma de %d + %d é igual a: %d\n", num1, num2, soma);
+    return 0;
+}</code></pre>
+
+<pre class="explicacao"><code>
+Explicação do código e funções
+int num1, num2, soma;: Declaração múltipla de variáveis inteiras na mesma linha.
+
++: Operador aritmético de adição.
+
+soma = num1 + num2;: O operador = atribui o resultado da operação da direita à variável da esquerda (soma).</code></pre>
+
+<h1>Atividade 4 – Quatro operações</h1>
+<p>O que a atividade faz: Recebe dois números inteiros e exibe o resultado da soma, subtração, multiplicação e divisão inteira entre eles.</p>
+<pre class="codigo"><code>
+    #include &lt;stdio.h&gt;
+
+int main() {
+    int a, b;
+
+    printf("Digite o primeiro número: ");
+    scanf("%d", &a);
+
+    printf("Digite o segundo número: ");
+    scanf("%d", &b);
+
+    printf("Soma: %d\n", a + b);
+    printf("Subtração: %d\n", a - b);
+    printf("Multiplicação: %d\n", a * b);
+
+    if (b != 0) {
+        printf("Divisão inteira: %d\n", a / b);
+    } else {
+        printf("Divisão por zero não é permitida!\n");
+    }
+
+    return 0;
+}</code></pre>
+<pre class="explicacao"><code>
+Explicação do código e funções
++, -, *, /: Operadores de adição, subtração, multiplicação e divisão.
+
+if (b != 0): Estrutura condicional para evitar erro de divisão por zero (que faria o programa quebrar).
+
+Operações diretamente no printf: O C permite realizar cálculos diretamente no parâmetro da função de saída sem precisar criar variáveis intermediárias.</code></pre>
+
+<h1>Atividade 5 – Antecessor e sucessor</h1>
+<p>O que a atividade faz: Lê um número inteiro e mostra o valor imediatamente anterior (antecessor) e o valor imediatamente posterior (sucessor).</p>
+<pre class="codigo"><code>
+    #include &lt;stdio.h&gt;
+
+int main() {
+    int numero;
+
+    printf("Digite um número inteiro: ");
+    scanf("%d", &numero);
+
+    printf("O antecessor de %d é: %d\n", numero, numero - 1);
+    printf("O sucessor de %d é: %d\n", numero, numero + 1);
+
+    return 0;
+}</code></pre>
+<pre class="explicacao"><code>
+Explicação do código e funções
+numero - 1: Calcula o valor antecessor subtraindo 1 da unidade lida.
+
+numero + 1: Calcula o valor sucessor somando 1 à unidade lida.</code></pre>
+
+<h1>Atividade 6 – Média</h1>
+<p>O que a atividade faz
+Lê duas notas com casas decimais (ponto flutuante) e calcula a média aritmética simples.</p>
+<pre class="codigo"><code>
+    #include &lt;stdio.h&gt;
+
+int main() {
+    float nota1, nota2, media;
+
+    printf("Digite a primeira nota: ");
+    scanf("%f", &nota1);
+
+    printf("Digite a segunda nota: ");
+    scanf("%f", &nota2);
+
+    media = (nota1 + nota2) / 2.0;
+
+    printf("A média final é: %.2f\n", media);
+    return 0;
+}</code></pre>
+<pre class="explicacao"><code>
+Explicação do código e funções
+float: Tipo de dado usado para números reais (com casas decimais).
+
+%f: Especificador de formato usado no scanf e printf para ler e imprimir variáveis float.
+
+(nota1 + nota2) / 2.0: Uso de parênteses para garantir que a adição seja realizada antes da divisão (precedência de operadores).
+
+%.2f: Formata a exibição do float para mostrar apenas 2 casas decimais.</code></pre>
+
+<h1>Atividade 7 – Celsius para Fahrenheit</h1>
+<p>O que a atividade faz: Lê uma temperatura na escala Celsius e realiza a conversão para Fahrenheit utilizando a fórmula F = (C * 9/5) + 32.</p>
+<pre class="codigo"><code>
+    #include &lt;stdio.h&gt;
+
+int main() {
+    float celsius, fahrenheit;
+
+    printf("Digite a temperatura em °C: ");
+    scanf("%f", &celsius);
+
+    fahrenheit = (celsius * 9.0 / 5.0) + 32.0;
+
+    printf("%.1f°C equivale a %.1f°F\n", celsius, fahrenheit);
+    return 0;
+}</code></pre>
+<pre class="explicacao"><code>Explicação do código e funções
+9.0 / 5.0: É fundamental escrever com pontuação decimal (9.0 e 5.0). Se usássemos 9 / 5, o C executaria uma divisão inteira cujo resultado seria 1, errando a fórmula.</code></pre>
+
+<h1>Atividade 8 – Área do retângulo</h1>
+<p>O que a atividade faz: Solicita a base e a altura de um retângulo e calcula sua área total (Área = base x altura).</p>
+<pre class="codigo"><code>
+    #include &lt;stdio.h&gt;
+
+int main() {
+    float base, altura, area;
+
+    printf("Digite a base do retângulo: ");
+    scanf("%f", &base);
+
+    printf("Digite a altura do retângulo: ");
+    scanf("%f", &altura);
+
+    area = base * altura;
+
+    printf("A área do retângulo é: %.2f\n", area);
+    return 0;
+}</code></pre>
+<pre class="explicacao"><code>Explicação do código e funções
+Operação de multiplicação de duas variáveis float armazenando o resultado na variável area.</code></pre>
+
+<h1>Atividade 9 – Salário</h1>
+<p>O que a atividade faz: Calcula o salário bruto multiplicando o valor recebido por hora de trabalho pela quantidade total de horas trabalhadas no mês.</p>
+<pre class="codigo"><code>
+    #include &lt;stdio.h&gt;
+
+int main() {
+    float valor_hora, salario;
+    int horas_trabalhadas;
+
+    printf("Digite o valor recebido por hora (R$): ");
+    scanf("%f", &valor_hora);
+
+    printf("Digite a quantidade de horas trabalhadas: ");
+    scanf("%d", &horas_trabalhadas);
+
+    salario = valor_hora * horas_trabalhadas;
+
+    printf("O salário a receber é: R$ %.2f\n", salario);
+    return 0;
+}</code></pre>
+<pre class="explicacao"><code>Explicação do código e funções
+Combinação de entradas de tipos distintos: float para valor financeiro e int para quantidade inteira de horas.</code></pre>
+
+<h1>Atividade 10 – Calculadora</h1>
+<p>O que a atividade faz: Recebe dois números inteiros e exibe as 5 operações fundamentais: soma, subtração, multiplicação, divisão inteira e o resto da divisão (módulo).</p>
+<pre class="codigo"><code>
+    #include &lt;stdio.h&gt;
+
+int main() {
+    int num1, num2;
+
+    printf("Digite o primeiro número inteiros: ");
+    scanf("%d", &num1);
+
+    printf("Digite o segundo número inteiro: ");
+    scanf("%d", &num2);
+
+    printf("\n--- RESULTADOS ---\n");
+    printf("Soma: %d\n", num1 + num2);
+    printf("Subtração: %d\n", num1 - num2);
+    printf("Multiplicação: %d\n", num1 * num2);
+
+    if (num2 != 0) {
+        printf("Divisão inteira: %d\n", num1 / num2);
+        printf("Resto da divisão (módulo): %d\n", num1 % num2);
+    } else {
+        printf("Não é possível dividir por zero!\n");
+    }
+
+    return 0;
+}</code></pre>
+<pre class="explicacao"><code>Explicação do código e funções
+%: Operador módulo (resto da divisão inteira). Exemplo: 10 % 3 resulta em 1. Só funciona com tipos de dados inteiros.</code></pre>
+
+<h1>Desafio Extra – Ficha do Aluno</h1>
+<p>O que a atividade faz: Coleta múltiplos dados de um aluno (nome, idade, duas notas), calcula a média e imprime uma ficha organizada e formatada com os resultados.</p>
+<pre class="codigo"><code>
+    #include &lt;stdio.h&gt;
+
+int main() {
+    char nome[50];
+    int idade;
+    float nota1, nota2, media;
+
+    printf("Digite o nome do aluno: ");
+    scanf("%s", nome);
+
+    printf("Digite a idade do aluno: ");
+    scanf("%d", &idade);
+
+    printf("Digite a primeira nota: ");
+    scanf("%f", &nota1);
+
+    printf("Digite a segunda nota: ");
+    scanf("%f", &nota2);
+
+    media = (nota1 + nota2) / 2.0;
+
+    printf("\n==================================\n");
+    printf("         FICHA DO ALUNO           \n");
+    printf("==================================\n");
+    printf(" Nome:        %s\n", nome);
+    printf(" Idade:       %d anos\n", idade);
+    printf(" Nota 1:      %.2f\n", nota1);
+    printf(" Nota 2:      %.2f\n", nota2);
+    printf(" --------------------------------\n");
+    printf(" Média Final: %.2f\n", media);
+    printf("==================================\n");
+
+    return 0;
+}</code></pre>
+<pre class="explicacao"><code>Explicação do código e funções
+Integração total de variáveis dos tipos char[], int e float.
+
+Formatação de saída tabular usando espaços e caracteres divisores (= e -) para construir uma interface amigável via terminal.</code></pre>
+</body>
+</html>
